@@ -8,11 +8,13 @@ on:
     branches: [develop]
   schedule:
     - cron: '0 23 * * 2'
+    
 
 jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+
 
     steps:
     - name: Checkout repository
