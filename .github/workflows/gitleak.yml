@@ -12,6 +12,8 @@ jobs:
         fetch-depth: '0'
     - name: gitleaks-action
       uses: spring-media/gitleaks-action@master
+    - name: create gitleaks-report
+      run: touch gitleaks-report.json
     - name: Gitleaks report
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
