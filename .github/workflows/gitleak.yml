@@ -1,0 +1,26 @@
+name: gitleaks
+
+on: [push,pull_request]
+
+ 
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - name: gitleaks-action
+      uses: spring-media/gitleaks-action@master
+    - name: Gitleaks report
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+         name: gitleaks report
+         path: gitleaks-report.json
+    - name: create npmrc
+      run: |
+        touch ~/.npmrc 
+        echo "//npm.pkg.github.com/:_authToken={githubtoken} \
+        @attest:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+        cat ~/.npmrc
