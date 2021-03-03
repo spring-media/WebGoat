@@ -27,9 +27,4 @@ jobs:
       with:
         path: 'docker'
         output_path: 'results.json'
-	
-	#Display the results in json format	  
-#- name: display kics results
-     #run: |
-       # cat results.json
  
