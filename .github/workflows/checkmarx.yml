@@ -25,9 +25,9 @@ on:
         path: 'docker'
         output_path: 'results.json'
 	# Display the results in json format	  
-    - name: display kics results
-      run: |
-          cat results.json
+    #- name: display kics results
+      #run: |
+         #cat results.json
   # This workflow contains a single job called "build"
 
     # The type of runner that the job will run on
