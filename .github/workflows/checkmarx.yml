@@ -24,3 +24,7 @@ jobs:
     steps:
     - name: KICS Github Action
       uses: Checkmarx/kics-github-action@v1.0
+      with:
+        # We must fetch at least the immediate parents so that if this is
+        # a pull request then we can checkout the head.
+        fetch-depth: 2
