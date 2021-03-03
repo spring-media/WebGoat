@@ -15,6 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
   # Steps represent a sequence of tasks that will be executed as part of the job
+    runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
@@ -24,7 +25,7 @@ on:
       with:
         path: 'docker'
         output_path: 'results.json'
-	
+		
 #Display the results in json format	  
     - name: display kics results
       run: |
